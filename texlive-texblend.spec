@@ -1,5 +1,6 @@
 %global tl_name texblend
 %global tl_revision 68961
+%global tl_bin_links texblend:%{_texmfdistdir}/scripts/texblend/texblend
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -15,6 +16,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(texblend.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 This tool compiles individual files that are included as parts of larger
